@@ -37,9 +37,8 @@ fs.readdir(dir, (error, files) => {
             });
         });
         result['failed'] = failureCount;
-        //calculateFailedTest(result['total'], result['passed']);
         resolve(result);
     }).then(data => {
-        fs.writeFileSync('./aggregated-result.json', JSON.stringify(data));
+        fs.writeFileSync('./aggregated-results.json', JSON.stringify(data));
     })
 })

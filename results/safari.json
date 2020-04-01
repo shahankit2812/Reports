@@ -1,0 +1,41 @@
+
+
+{
+  "startTime": "2020-03-13T17:34:49.429Z",
+  "endTime": "2020-03-13T17:34:55.882Z",
+  "userAgents": [
+    "Safari"
+  ],
+  "passed": 2,
+  "total": 2,
+  "skipped": 0,
+  "fixtures": [
+    {
+      "name": "Tests for feature 1",
+      "meta": {
+        "feature": "Feature 1",
+        "type": "sequential"
+      },
+      "tests": [
+        {
+          "name": "Collecting information",
+          "meta": {},
+          "errs": [],
+          "durationMs": 4936,
+          "screenshotPath": null,
+          "skipped": false
+        },
+        {
+          "name": "Check presence of this object",
+          "meta": {},
+          "errs": [],
+          "durationMs": 159,
+          "screenshotPath": null,
+          "skipped": false
+        }
+      ]
+    }
+  ],
+  "warnings": []
+
+}

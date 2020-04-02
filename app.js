@@ -1,6 +1,8 @@
+const { generateTemplate } = require('./htmlTemplate');
 const fs = require('fs');
 const path = require('path');
 const dir = path.join(__dirname, 'results');
+
 let result = {
     "passed": 0,
     "total": 0,
@@ -40,5 +42,17 @@ fs.readdir(dir, (error, files) => {
         resolve(result);
     }).then(data => {
         fs.writeFileSync('./aggregated-results.json', JSON.stringify(data));
+        let refinedTest = {
+        };
+        data.tests.forEach(test => {
+            if (test.name in refinedTest) {
+                refinedTest[test.name].userAgent = refinedTest[test.name].userAgent.concat(", " + test.userAgent);
+            }
+            else {
+                refinedTest[test.name] = test;
+            }
+        })
+        const reports = generateTemplate(data,refinedTest);
+        fs.writeFileSync('./aggregated-results.html', reports);
     })
-})
+});

@@ -1,4 +1,4 @@
-module.exports.generateTemplate = (result,refinedTest)=>{
+module.exports.generateTemplate = (result, refinedTest) => {
     return `<html lang="en">
 <head>
     <meta charset="utf-8">
@@ -33,7 +33,7 @@ module.exports.generateTemplate = (result,refinedTest)=>{
     <script src="sortTable.js"></script>
 </body>
 </html> `
-}
+};
 
 function test(t, index) {
     return `<tr>
@@ -41,7 +41,7 @@ function test(t, index) {
         ${index}
     </td>
     <td>
-        ${t.errs.length == 0 ? 'Passed' : 'Failed'}
+        ${t.errs.length === 0 ? 'Passed' : 'Failed'}
     </td>
     <td>
         ${t.name}
